@@ -8,35 +8,10 @@ broker = "broker.hivemq.com"
 port = 1883
 base_topic = "machine_sim"
 
-class MachineStatus(enum.Enum):
-    ERROR = 0
-    IDLE = 1
-    PRODUCTION = 2
-    MAINTANANCE = 3
-
-class State:
-    v = 0.1
-
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.t = random.uniform(20, 30)
-        self.status = MachineStatus.IDLE
-
-    def update(self, dT):
-        if self.status == MachineStatus.PRODUCTION:
-            self.x = self.x + self.v * dT
-            self.y = self.y + self.v * dT
-            self.t = self.t + (random.random()-0.5)
-            if random.random() < 0.1:
-                self.status = random.choice(list(MachineStatus))
-        else:
-            if random.random() < 0.2:
-                self.status = random.choice(list(MachineStatus))
-        
+from machine_simluation import Machine
 
 # Initializations
-s = State(0,0)
+s = Machine(0,0)
 sleep_time = 1
 last_update = datetime.datetime.now()
 

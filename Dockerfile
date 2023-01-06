@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./mqtt_machine_simulation.py" ]
+CMD [ "python", "./mqtt_simulation.py" ]
