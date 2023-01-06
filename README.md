@@ -1,7 +1,6 @@
-# MQTT Sensor Simulator
+# Machine Simulator
 
-A simple script to simulate a machine with multiple interdependent sensors.
-
+A simple script to simulate MQTT from a machine with multiple interdependent sensors.
 
 ## How to use:
 ```
